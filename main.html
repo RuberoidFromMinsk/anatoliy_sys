@@ -8,10 +8,12 @@
         <title>Main</title>
         <link href="css/materialize.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="js/jquery-3.3.1.min.js"></script>
+        
         <style>
             body{
-                background-color: grey;
+                background-color: rgb(54, 53, 53);
+                margin: 0;
+                padding: 0;
             }
             .startImg{
                 background-image: url(img/main.jpg);
@@ -22,7 +24,7 @@
                 height: 91%;
                 filter: contrast(2);
                 filter: sepia(0.5);
-                
+                position: relative;
                 
                 
             }
@@ -36,33 +38,64 @@
             .nav-wrapper{
                 background-color: #474444;
             }
+            .welcome{
+                height: 20%;
+                width: 100%;
+                color: white;
+            }
+            .whiteText{
+                color:white;
+            }
+            .features i{
+                color:springgreen;
+            }
         </style>
     </head>
     <body>
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">three</a></li>
-        </ul>
         <nav>
             <div class="nav-wrapper">
+              <div class="container">
                 <a href="#!" class="brand-logo">SomeLogo</a>
+                <a class="sidenav-trigger" data-target="mobile-nav" href="#"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="sass.html">About</a></li>
                     <li><a href="badges.html">Components</a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-                <ul class="sidenav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
+                    <li><a href="#!" >Dropdown</a></li>
+                </ul>               
+              </div>
             </div>
         </nav>
+        <ul class="sidenav" id="mobile-nav">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="#!">Dropdown</a></li>
+        </ul>
     <!--Navbar-->
         <div class="startImg"></div>
-        <div class="startText"></div>
+        
+
+        <div class="welcome">
+            <h2 class="center">Welcome in our page!</h2>
+        </div>
+
+        <div class="container">
+            <div class="features whiteText">
+                <div class="row">
+                    <div class="col xl4">
+                        <h4 class="center "><i class="medium material-icons">directions_walk</i></h4>
+                        <p>We are always on the way! Request a call back and we will advise you on this or that event</p>
+                    </div>
+                    <div class="col xl4">
+                        <h4 class="center"><i class="medium material-icons">place</i></h4>
+                        <p>Our office is located in the center of Minsk. Convenient location, free parking, tea/coffee and cookies are waiting for you in our office</p>
+                    </div>
+                    <div class="col xl4">
+                        <h4 class="center"><i class="medium material-icons">phone_in_talk</i></h4>
+                        <p>You can always order a call back. Our experts will advise you on all your questions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="container"><div class="row">
             <div class="col xl4">
@@ -114,6 +147,7 @@
 
         
 
+
         <footer class="page-footer">
             <div class="container">
               <div class="row">
@@ -140,14 +174,13 @@
             </div>
         </footer>
 
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/materialize.min.js"></script>
         <script>
-            $( document ).ready(function(){
-                $(".dropdown-trigger").dropdown();
-            });
             $(document).ready(function(){
-                $('.sidenav').sidenav();
+                $(".sidenav").sidenav();
             });
-            
+
             $( document ).ready(function() {
 			    const items = $(".img-item");
 			    const i = Math.floor(Math.random() * 2) + 3 * Math.floor(Math.random() * 2);
@@ -156,6 +189,6 @@
 
         </script>
        
-        <script src="js/materialize.min.js"></script>
+        
     </body>
 </html>
