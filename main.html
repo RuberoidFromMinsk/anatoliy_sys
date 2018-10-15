@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="msapplication-tap-highlight" content="no">
+        <title>Main</title>
+        <link href="css/materialize.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <style>
+            body{
+                background-color: grey;
+            }
+            .startImg{
+                background-image: url(img/main.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                height: 91%;
+                filter: contrast(2);
+                filter: sepia(0.5);
+                
+                
+                
+            }
+            .startText{
+                
+            }
+            
+            .page-footer{
+                background-color: #474444;
+            }
+            .nav-wrapper{
+                background-color: #474444;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">SomeLogo</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+                <ul class="sidenav" id="mobile-demo">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    <!--Navbar-->
+        <div class="startImg"></div>
+        <div class="startText"></div>
+
+        <div class="container"><div class="row">
+            <div class="col xl4">
+                <div class="card">
+                    <div class="card-image">
+                      <img src="img/card1.jpg">
+                      <span class="card-title">Dance</span>
+                    </div>
+                    <div class="card-content">
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col xl4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/jazz.jpg">
+                        <span class="card-title">Jazz</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                          I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col xl4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/classic.jpg">
+                        <span class="card-title">Classic</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                              I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+
+        
+
+        <footer class="page-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Footer Content</h5>
+                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Links</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2014 Copyright Text
+              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+              </div>
+            </div>
+        </footer>
+
+        <script>
+            $( document ).ready(function(){
+                $(".dropdown-trigger").dropdown();
+            });
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+            });
+            
+            $( document ).ready(function() {
+			    const items = $(".img-item");
+			    const i = Math.floor(Math.random() * 2) + 3 * Math.floor(Math.random() * 2);
+			    items[i].className += " big";	
+		    });
+
+        </script>
+       
+        <script src="js/materialize.min.js"></script>
+    </body>
+</html>
