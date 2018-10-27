@@ -1,0 +1,35 @@
+<html>
+<head>
+  <style>
+  .butt{
+    margin-top: 0px;
+    text-align: right;
+  }
+  </style>
+</head>
+<body>
+    <img src=kot.png width="200px" height="150px" id="cat" style="position:absolute;">
+    <div class="butt">
+      <button type="button" onclick="move('cat')">Go!</button>
+      <br>
+    </div>
+
+<script>
+function move(obj) { 
+    x = 2
+    corG = 0   
+    corX = "x"
+    var timer = setInterval(function () {
+        if (corG == 0) x+=2;
+        if (x == 500) corG = 1;
+        if (corG == 1) x-=2;
+       
+        document.all[obj].style.left = eval(corX)
+        
+        if (x == 0) clearInterval(timer);
+    }, 1);
+}
+
+</script>
+</body>
+</html>
