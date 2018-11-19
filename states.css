@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
+* {
+  box-sizing: border-box; }
+
+.countries {
+  background: #353535;
+  color: #c4c4c4;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  display: flex;
+  flex-wrap: wrap; }
+
+.countries-text {
+  text-align: center;
+  flex: 1 1 100%;
+  color: #c4c4c4; }
+
+.main-content {
+  padding: 5%;
+  flex: 1 1 80%;
+  min-height: 100vh; }
+
+.country {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px; }
+
+.country-item {
+  background: #f96855;
+  color: #c4c4c4;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  background-size: cover;
+  background-position: top left;
+  transition: all ease-in-out 300ms;
+  position: relative;
+  z-index: 10; }
+  .country-item.small {
+    grid-row: span 1;
+    grid-column: span 1; }
+  .country-item.medium {
+    grid-row: span 2;
+    grid-column: span 2; }
+  .country-item.large {
+    grid-row: span 3;
+    grid-column: span 3; }
+  .country-item.tall {
+    grid-row: span 3;
+    grid-column: span 2; }
+  .country-item.wide {
+    grid-row: span 2;
+    grid-column: span 3; }
+  .country-item:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.85); }
+
+.changeOpacity::before {
+  content: '';
+  display: block;
+  background: #353535;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1; }
+.changeOpacity:hover::before {
+  opacity: 0.2; }
+.changeOpacity .germany {
+  background-image: url(img/countries/Germany.jpg); }

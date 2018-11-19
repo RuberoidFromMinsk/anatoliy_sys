@@ -9,10 +9,10 @@
         <link href="css/materialize.min.css" rel="stylesheet">
         <link href="css/fontawesome.min.css" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
+        <link href="states.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
-        <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
-    crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
         
         <style>
             
@@ -140,7 +140,23 @@
 
         
 
-        
+        <div class="countries">
+            <h3 class="countries-text">You can select a country</h3>
+            <div class="main-content">
+                <div class="country">
+                    <div class="country-item medium changeOpacity"></div>
+                    <div class="country-item large changeOpacity"></div>
+                    <div class="country-item medium changeOpacity"></div>
+                    <div class="country-item small changeOpacity"></div>
+                    <div class="country-item tall changeOpacity"></div>
+                    <div class="country-item wide changeOpacity"></div>
+                    <div class="country-item wide changeOpacity"></div>
+                    <div class="country-item medium changeOpacity"></div>
+                </div>
+            </div>
+        </div>
+          
+
         
 
         <div class="contact grey lighten-2">           
@@ -254,15 +270,6 @@
                     $('nav').removeClass('nav-opacity');
                });
             });
-
-            $( document ).ready(function() {
-			    const items = $(".img-item");
-			    const i = Math.floor(Math.random() * 2) + 3 * Math.floor(Math.random() * 2);
-			    items[i].className += " big";	
-		    });
-
-        </script>
-       
-        
+        </script>      
     </body>
 </html>

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+// Fonts
+$sans-serif: 'Raleway', sans-serif;
+$font-light: 300;
+$font-bold: 700;
+
+// Colors
+$black: #353535;
+$gray: #4f4f4f;
+$medium-gray: #737373;
+$light-gray: #c4c4c4;
+$orange: #f96855;
+
+// Semantic color names
+$accent: $orange;
+
+$body-background: $black;
+$menu-background: $gray;
+
+$main-font-color: $light-gray;
+$menu-active-color: $light-gray;
+$menu-font-color: $medium-gray;
+
+
+
+// ===================
+// General styles
+// ===================
+
+* { box-sizing: border-box; }
+
+.countries {
+  background: $body-background;
+  color: $main-font-color;
+  font-family: $sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.countries-text{
+    text-align: center;
+    flex: 1 1 100%;
+    color: $light-gray;
+}
+
+.main-content {
+  padding: 5%;
+  flex: 1 1 80%;
+  min-height: 100vh;
+
+}
+
+.country {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.country-item {
+  background: $accent;
+  color: $light-gray;
+  font-weight: $font-bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  background-size: cover;
+  background-position: top left;
+  transition: all ease-in-out 300ms;
+  position: relative;
+  z-index: 10;
+  
+  &.small {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+  
+  &.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+  
+  &.large {
+    grid-row: span 3;
+    grid-column: span 3;
+  }
+  
+  &.tall {
+    grid-row: span 3;
+    grid-column: span 2;
+  }
+  
+  &.wide {
+    grid-row: span 2;
+    grid-column: span 3;
+  }
+    
+  &:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
+  }
+}
+
+.changeOpacity{
+    //background-image: url(img/countries/Germany.jpg);
+  &::before {
+    content: '';
+    display: block;
+    background: $black;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out 300ms;
+    z-index: -1;
+  }
+  
+  &:hover::before {
+    opacity: 0.2;
+  }
+  
+  .germany{
+    background-image: url(img/countries/Germany.jpg);
+  }
+
+  .hungary{
+
+  }
+
+  .belarus{
+
+  }
+
+  .ukraine{
+
+  }
+
+  .usa{
+
+  }
+
+}
