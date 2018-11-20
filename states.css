@@ -4,9 +4,6 @@
 
 .countries {
   background: #353535;
-  color: #c4c4c4;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.2rem;
   line-height: 1.45;
   display: flex;
   flex-wrap: wrap; }
@@ -18,49 +15,75 @@
 
 .main-content {
   padding: 5%;
-  flex: 1 1 80%;
-  min-height: 100vh; }
+  flex: 1 1 80%; }
 
 .country {
   display: grid;
   height: 100%;
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px; }
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 2px; }
 
 .country-item {
   background: #f96855;
-  color: #c4c4c4;
-  font-weight: 700;
+  cursor: pointer;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  background-size: cover;
-  background-position: top left;
-  transition: all ease-in-out 300ms;
-  position: relative;
-  z-index: 10; }
-  .country-item.small {
-    grid-row: span 1;
-    grid-column: span 1; }
+  position: relative; }
   .country-item.medium {
     grid-row: span 2;
-    grid-column: span 2; }
+    grid-column: span 3; }
+  .country-item.largest {
+    grid-row: span 4;
+    grid-column: span 5; }
   .country-item.large {
     grid-row: span 3;
-    grid-column: span 3; }
+    grid-column: span 5; }
   .country-item.tall {
     grid-row: span 3;
-    grid-column: span 2; }
-  .country-item.wide {
-    grid-row: span 2;
     grid-column: span 3; }
+  .country-item.last {
+    grid-row: span 4;
+    grid-column: span 4; }
   .country-item:hover {
     color: white;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.85); }
 
-.changeOpacity::before {
+.poland {
+  background-image: url(img/countries/Poland.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.ukraine {
+  background-image: url(img/countries/Ukraine.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.usa {
+  background-image: url(img/countries/USA.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.belarus {
+  background-image: url(img/countries/Belarus.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.germany {
+  background-image: url(img/countries/Germany.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.canada {
+  background-image: url(img/countries/Canada.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.hungary {
+  background-image: url(img/countries/Hungary.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.poland::before, .ukraine::before, .germany::before, .belarus::before, .usa::before, .canada::before, .hungary::before {
   content: '';
   display: block;
   background: #353535;
@@ -70,9 +93,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1; }
-.changeOpacity:hover::before {
+  transition: all ease-in-out 300ms; }
+
+.poland:hover::before, .ukraine:hover::before, .germany:hover::before, .belarus:hover::before, .usa:hover::before, .canada:hover::before, .hungary:hover::before {
   opacity: 0.2; }
-.changeOpacity .germany {
-  background-image: url(img/countries/Germany.jpg); }
