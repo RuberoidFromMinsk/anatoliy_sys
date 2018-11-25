@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="msapplication-tap-highlight" content="no">
+
+        <title>@Poland</title>
+
+        <link href="css/materialize.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="basisForSecondary.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+        <style>
+            .slide:nth-of-type(1){
+                 background-image: url(img/countries/Poland/slider1.png);
+                 background-position: center;
+            }
+            .slide:nth-of-type(2){
+                background-image: url(img/countries/Poland/slider2.jpg);
+                background-position: center;
+            }
+            .slide:nth-of-type(3){
+                background-image: url(img/countries/Poland/slider3.jpg);
+                background-position: center;
+            }
+            .slide:nth-of-type(4){
+                background-image: url(img/countries/Hungary/slider1.jpg);
+            }
+            .slide:nth-of-type(5){
+                background-image: url(img/countries/Hungary/slider2.jpg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar-fixed">
+          <nav class="nav-opacity">
+            <div class="nav-wrapper">
+              <div class="container">
+                <a href="main.html" class="brand-logo">MusHunter</a>
+                <a class="sidenav-trigger" data-target="mobile-nav" href="#"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Festivals</a></li>
+                    <li><a href="#">Countries</a></li>
+                    <li><a href="#!" >About us</a></li>
+                    <li><a href="#!" >Contact</a></li>
+                </ul>               
+              </div>
+            </div>
+          </nav>
+        </div>
+        <ul class="sidenav" id="mobile-nav">
+            <li><a href="#">Festivals</a></li>
+            <li><a href="#">Countries</a></li>
+            <li><a href="#!" >About us</a></li>
+            <li><a href="#!" >Contact</a></li>
+        </ul>
+        <!--Navbar -->
+
+        <div class="parallax-container">
+            <div class="parallax"><img src="img/countries/Poland/title.jpg"></div>
+        </div>
+        <div class="section grey lighten-3">
+            <div class="container">
+                <h2 class="header">Welcome to Sziget!</h2>
+                <p class="grey-text text-darken-3 lighten-3">
+                    Фестиваль Сигет (венг. Sziget, буквально «Остров») — ежегодный фестиваль музыки, культуры и искусства. 
+                    Пятый по величине фестиваль в мире и одно из крупнейших музыкальных мероприятий в Европе (в 2018 году фестиваль посетило 566 000 зрителей из более чем 100 стран.).
+                    Проходит с 1993 года на острове Обуда. Фестиваль длится 7 дней, программы работают 24 часа в сутки.
+                </p>
+
+                <ul id="slides">
+                    <li class="slide showing"></li>
+                    <li class="slide"></li>
+                    <li class="slide"></li>
+                </ul>
+
+                <h2 class="header">Что Вас ждёт ?</h2>
+                <p class="grey-text text-darken-3 lighten-3">
+                    В течение недели посетители фестиваля могут ознакомиться с очень широким спектром музыки: от традиционных алжирских песен до сумасшедшего канадского индастриала, от брутального американского хард-кора до утончённых лондонских диджеев. 
+                    Кроме музыки на Сигете происходят многочисленные культурные мероприятия, включая просмотры кинофильмов, спортивные соревнования.
+                </p>
+            </div>
+        </div>
+
+        <div class="section grey darken-3">
+            <div class="container">
+                <h2 class="header grey-text text-lighten-3">Чем поможем мы?</h2>
+                <p class="grey-text text-lighten-3">
+                    Венгрия расположена в самом сердце Европы и имеет хорошую транспортную доступность, а из Минска в Будапешт легко добраться на самолете, автобусе или поезде. 
+                    Сегодня существует огромное количество возможностей для организации самостоятельного отдыха и путешествия, но мы готовы вам помочь найти самый подходящий маршрут поездки на фестиваль Sziget
+                </p>
+            </div>
+        </div>
+
+              
+              
+        
+
+        <footer class="section grey darken-4 white-text center">
+            <div class="container">
+                <div class="row">
+                    <div class="page-footer">
+                        <div class="col xl3 s3">MusHunter&copy; 2018</div>
+                        <div class="col xl3 s3 offset-xl6 offset-s6">All rights reserved</div>
+                    </div>                 
+                </div>            
+            </div>
+        </footer>
+
+
+        <!--Scripts-->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/materialize.min.js"></script>
+        <script src="js/slider.js"></script>
+        
+
+        <script>
+            $(document).ready(function(){
+                $(".sidenav").sidenav();
+            });
+
+            $(document).ready(function(){       
+               $(window).scroll(function(){
+                  if($(window).scrollTop()>300)
+                    $('nav').addClass('nav-opacity');
+                  else
+                    $('nav').removeClass('nav-opacity');
+               });
+            });
+            $(document).ready(function(){
+               $('.parallax').parallax();
+            });
+        </script>      
+    </body>
+</html>
