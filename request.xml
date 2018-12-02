@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"  encoding="UTF-8" ?>
+<trips>
+      <trip>
+         <name>Krakow</name>
+         <date>22.07.2018</date>
+         <plases>29</plases>
+      </trip>
+      <trip>
+         <name>Budapest</name>
+         <date>15.08.2018</date>
+         <plases>17</plases>
+      </trip>
+      <trip>
+         <name>Berlin</name>
+         <date>19.09.2018</date>
+         <plases>9</plases>
+      </trip>
+      <trip>
+         <name>Kiev</name>
+         <date>29.08.2018</date>
+         <plases>29</plases>
+      </trip>
+</trips>

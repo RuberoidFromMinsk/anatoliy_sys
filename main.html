@@ -8,16 +8,50 @@
         <title>@StartPage</title>
         <link href="css/materialize.min.css" rel="stylesheet">
         <link href="css/fontawesome.min.css" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
-        <link href="states.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/states.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
         <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
         
         <style>
-            
-            
+            .startImg{
+                background-image: url(img/main.jpg);
+            }
+            .poland{
+                background-image: url(img/countries/Poland.jpg);
+            }
+            .ukraine {
+                background-image: url(img/countries/Ukraine.jpg);
+            }
+            .usa {
+                background-image: url(img/countries/USA.jpg);
+            }
+            .belarus {
+                background-image: url(img/countries/Belarus.jpg);
+            }
+            .germany {
+                background-image: url(img/countries/Germany.jpg);
+            }
+            .canada {
+                background-image: url(img/countries/Canada.jpg);
+            }
+            .hungary {
+                background-image: url(img/countries/Hungary.jpg);
+            }
         </style>
+
+        <script>
+            function GetFields(){
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET","request.xml",false);
+                xhr.send();
+                xmlDoc = xhr.responseXML;
+                document.getElementById("name").innerHTML = xmlDoc.getElementsByTagName("name")[0].value;
+                document.getElementById("date").innerHTML = xmlDoc.getElementsByTagName("date")[0].childNodes[0].nodeValue;
+                document.getElementById("plases").innerHTML = xmlDoc.getElementsByTagName("plases")[0].childNodes[0].nodeValue;
+            }
+        </script>
     </head>
     <body>
         <div class="navbar-fixed">
@@ -29,6 +63,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#">Festivals</a></li>
                     <li><a href="#">Countries</a></li>
+                    <li><a href="calc.html" >Calc</a></li>
                     <li><a href="#!" >About us</a></li>
                     <li><a href="#!" >Contact</a></li>
                 </ul>               
@@ -37,9 +72,11 @@
           </nav>
         </div>
         <ul class="sidenav" id="mobile-nav">
-            <li><a href="sass.html">About us</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="#!">More</a></li>
+            <li><a href="#">Festivals</a></li>
+            <li><a href="#">Countries</a></li>
+            <li><a href="#!" >Calc</a></li>
+            <li><a href="#!" >About us</a></li>
+            <li><a href="#!" >Contact</a></li>
         </ul>
     <!--Navbar-->
         
@@ -156,7 +193,41 @@
         </div>
           
 
-        
+        <section class="section grey lighten-3">
+            <div class="row">
+                <div class="col xl3 s6 offset-xl9 offset-s4">
+                    <p class="sziget">Sziget</p>
+                </div>
+            </div>
+
+            <div class="top">
+                    <div class="row">
+                            <div class="col xl4 s6 offset-xl1 offset-s3">
+                                <p class="krakow">Kraków Live Festival</p>
+                            </div>
+                        </div>
+            </div>
+            
+
+            <div class="row">
+                <div class="col xl3 s6 offset-xl9 offset-s6">
+                    <p class="sziget">Sziget</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section grey lighten-1">
+            <div class="row">
+                <div class="col xl6 offset-xl3">
+                    <button onclick="GetFields()">SSS</button>
+                    <h3>REQUEST</h3>
+                    <p id="name"></p>
+                    <p id="date"></p>
+                    <p id="plases"></p>
+                </div>
+            </div>
+        </section>
 
         <div class="contact grey lighten-2">           
             <form>          
