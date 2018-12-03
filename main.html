@@ -10,6 +10,7 @@
         <link href="css/fontawesome.min.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
         <link href="css/states.css" rel="stylesheet">
+        <link href="css/words.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
         <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
@@ -42,16 +43,62 @@
         </style>
 
         <script>
-            function GetFields(){
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET","request.xml",false);
+            /*function GetFields(){
+                xhr = new XMLHttpRequest();
+                xhr.open('GET','request.xml', false);
                 xhr.send();
                 xmlDoc = xhr.responseXML;
-                document.getElementById("name").innerHTML = xmlDoc.getElementsByTagName("name")[0].value;
-                document.getElementById("date").innerHTML = xmlDoc.getElementsByTagName("date")[0].childNodes[0].nodeValue;
-                document.getElementById("plases").innerHTML = xmlDoc.getElementsByTagName("plases")[0].childNodes[0].nodeValue;
-            }
+                xmlRoot = xmlDoc.documentElement;
+                Array = xmlRoot.getElementsByTagName("trip");
+                var myDiv = document.getElementById('plases');
+                alert( xhr);
+                var html = "";
+                for (var i=0;i<Array.length;i++){
+                html = "";
+                html = Array.item(i).getAttribute('name')+"<br>";
+                html +=Array.item(i).getAttribute('date')+"<br>";
+                elm = Array.item(i).getElementsByTagName("*");
+                for(var j = 0;j<elm.length;j++){
+                    html +=elm.item(j).firstChild.data+"<br>";
+                    myDiv.innerHTML +="trip " + (i+1) + ":<br>" + html + "<hr>";
+                }
+            }*/
+            /*function GetFields(){
+                xmlContent = FileReader.readFile("request.xml");
+                alert(xmlContent.alert);
+                //var xmlDoc = $.parseXML( xmlContent );
+                //var price = $( xmlDoc ).find( "lol" );
+                //alert(price.text());
+                //document.getElementById("plases").textContent = price.text();
+            }*/
         </script>
+        <script> 
+          function GetFields(){
+            if (window.XMLHttpRequest) 
+            {
+            xmlhttp = new XMLHttpRequest();
+            } 
+            else 
+            {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");} 
+            xmlhttp.open("GET","request.xml",false); 
+            xmlhttp.send(); 
+            xmlDoc = xmlhttp.responseXML; 
+            document.getElementById("plases").innerHTML = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue; 
+            /*document.getElementById("sinform").innerHTML = xmlDoc.getElementsByTagName("fname")[0].childNodes[0].nodeValue; 
+            document.getElementById("sprice").innerHTML = xmlDoc.getElementsByTagName("cena")[0].childNodes[0].nodeValue; 
+            document.getElementById("sversion1").innerHTML = xmlDoc.getElementsByTagName("name1")[0].childNodes[0].nodeValue; 
+            document.getElementById("sinform1").innerHTML = xmlDoc.getElementsByTagName("fname1")[0].childNodes[0].nodeValue; 
+            document.getElementById("sprice1").innerHTML = xmlDoc.getElementsByTagName("cena1")[0].childNodes[0].nodeValue; 
+            document.getElementById("sversion2").innerHTML = xmlDoc.getElementsByTagName("name2")[0].childNodes[0].nodeValue; 
+            document.getElementById("sinform2").innerHTML = xmlDoc.getElementsByTagName("fname2")[0].childNodes[0].nodeValue; 
+            document.getElementById("sprice2").innerHTML = xmlDoc.getElementsByTagName("cena2")[0].childNodes[0].nodeValue; 
+            document.getElementById("sversion3").innerHTML = xmlDoc.getElementsByTagName("name3")[0].childNodes[0].nodeValue; 
+            document.getElementById("sinform3").innerHTML = xmlDoc.getElementsByTagName("fname3")[0].childNodes[0].nodeValue; 
+            document.getElementById("sprice3").innerHTML = xmlDoc.getElementsByTagName("cena3")[0].childNodes[0].nodeValue; */
+          }
+            </script>
+            
     </head>
     <body>
         <div class="navbar-fixed">
@@ -61,27 +108,27 @@
                 <a href="#!" class="brand-logo">MusHunter</a>
                 <a class="sidenav-trigger" data-target="mobile-nav" href="#"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Festivals</a></li>
-                    <li><a href="#">Countries</a></li>
+                    <li><a href="#festivals">Festivals</a></li>
+                    <li><a href="#countries">Countries</a></li>
                     <li><a href="calc.html" >Calc</a></li>
-                    <li><a href="#!" >About us</a></li>
-                    <li><a href="#!" >Contact</a></li>
+                    <li><a href="#about" >About us</a></li>
+                    <li><a href="#contact" >Contact</a></li>
                 </ul>               
               </div>
             </div>
           </nav>
         </div>
         <ul class="sidenav" id="mobile-nav">
-            <li><a href="#">Festivals</a></li>
-            <li><a href="#">Countries</a></li>
-            <li><a href="#!" >Calc</a></li>
-            <li><a href="#!" >About us</a></li>
-            <li><a href="#!" >Contact</a></li>
+            <li><a href="#festivals">Festivals</a></li>
+            <li><a href="#countries">Countries</a></li>
+            <li><a href="calc.html" >Calc</a></li>
+            <li><a href="#about" >About us</a></li>
+            <li><a href="#contact" >Contact</a></li>
         </ul>
     <!--Navbar-->
         
         
-        <div class="startImg"></div>
+        <div class="startImg"></div> 
         <div class="divider"></div>
         
             
@@ -177,7 +224,7 @@
 
         
 
-        <div class="countries">
+        <div class="countries" id="countries">
             <h3 class="countries-text">You can select a country</h3>
             <div class="main-content">
                 <div class="country">
@@ -193,27 +240,17 @@
         </div>
           
 
-        <section class="section grey lighten-3">
-            <div class="row">
-                <div class="col xl3 s6 offset-xl9 offset-s4">
-                    <p class="sziget">Sziget</p>
-                </div>
-            </div>
-
-            <div class="top">
-                    <div class="row">
-                            <div class="col xl4 s6 offset-xl1 offset-s3">
-                                <p class="krakow">Kraków Live Festival</p>
-                            </div>
-                        </div>
-            </div>
-            
-
-            <div class="row">
-                <div class="col xl3 s6 offset-xl9 offset-s6">
-                    <p class="sziget">Sziget</p>
-                </div>
-            </div>
+        <section id="festivals" class="grey darken-4">
+            <h3 class="center festivals-text">Или фестиваль</h3>
+            <ul>
+                <li class="center poland-text"><a href="poland.html">Krakow live festival</a></li>
+                <li class="center ukraine-text"><a href="#!">Kiev live</a></li>
+                <li class="center hungary-text"><a href="hungary.html">Sziget</a></li>
+                <li class="center germany-text"><a href="#!">Bremen oct.</a></li>
+                <li class="center canada-text"><a href="#!">Toromto music</a></li>
+                <li class="center belarus-text"><a href="#!">Bralav open</a></li>
+                <li class="center usa-text"><a href="#!">USA national fest</a></li>
+            </ul>
         </section>
 
 
@@ -229,7 +266,7 @@
             </div>
         </section>
 
-        <div class="contact grey lighten-2">           
+        <div id="contact" class="contact grey lighten-2">           
             <form>          
                 <h2 class="cntct-title">Contact Us</h2>
                 <div class="row">

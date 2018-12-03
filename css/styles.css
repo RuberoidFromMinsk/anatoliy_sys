@@ -22,22 +22,13 @@ nav{
 .startImg{
     background-image: url(img/main.jpg);
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 91%;
     filter: contrast(2);
     filter: sepia(0.5);
     position: relative;
-    
-    
 }
-.startText{
-    color:white;
-    align-content: center;
-    position: absolute;
-}
-
 .page-footer{
     padding: 15px 0 0 0;
     background-color: #212121;
@@ -100,15 +91,23 @@ nav{
 .follow-title{
     font-family: 'Lato';            
 }
-.sziget{
+.festivals-text{
+    letter-spacing: 3px;
     font-size: 50px;
-    letter-spacing: 2px;
-    font-family: 'Lato';
-    font-weight: 900;
+    color: #F87085
 }
-.krakow{
-    font-size: 60px;
+.poland-text, .usa-text, .canada-text, .hungary-text{
+    color:whitesmoke;
+    font-size: 40px;
     letter-spacing: 2px;
-    font-family: 'Lato';
     font-weight: 700;
+}
+.ukraine-text, .germany-text, .belarus-text{
+    font-size: 30;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+#festivals a{
+    color: whitesmoke;
 }

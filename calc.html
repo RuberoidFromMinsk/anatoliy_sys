@@ -72,8 +72,13 @@
                    sum+=count*18;
                 }
 
-                if(sum!=0){
-                    document.getElementById('details').innerHTML += sum + '$';
+                var result = document.getElementById('details');
+
+                if(sum!=0 && result.innerHTML==""){
+                    result.innerHTML += sum + '$';
+                }
+                else if(result.innerHTML !="" && sum!=0){
+                    result.innerHTML+='';
                 }
                 else{
                     alert("Корректно заполните данные");
