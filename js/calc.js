@@ -1,62 +1,63 @@
 function calculate(){
-                sum = 0;
-                count = 0;
-                //person = document.getElementById("persons").value;
-                /*discount = document.getElementById('discount');
+    sum = 0;
+    count = document.getElementById("persons").value;
 
+    visa = document.getElementById("visa");
+    urgency = document.getElementById("urgency");
+    transfer = document.getElementById("transfer");
+    country = document.getElementById("place").options.selectedIndex;
+    discount = document.getElementById("discount").options.selectedIndex;
 
-                visa = document.getElementsByName('visa');
-                urgency = document.getElementsByName('urgency');
-                transfer = document.getElementsByName('transfer');
+//Countries
+    if(country == 1){
+        sum += count * 150;
+    }
+    if(country == 2){
+        sum += count * 180;
+    }
+    if(country == 3){
+        sum += count * 135;
+    }
+    if(country == 4){
+        sum += count * 230;
+    }
+    if(country == 5){
+        sum += count * 250;
+    }
+    if(country == 6){
+        sum += count * 30;
+    }
 
-                    switch(person){
-                        case "1":{
-                            count = 1;
-                            break;
-                        }
-                        case "2":{
-                            count = 2;
-                            break;
-                        }
-                        case "3":{
-                            count = 3;
-                            break;
-                        }
-                        case "4":{
-                            count = 4;
-                            break;
-                        }
-                        case "5":{
-                            count = 5;
-                            break;
-                        }
-                    }
+//Discount
+    if(discount == 2){
+        sum = sum * 0.93;
+    }
+    if(discount == 3){
+        sum = sum * 0.85;
+    }
+//Added service
+    if($(visa).is(':checked')){
+       sum+=count*60;
+    }
 
-                    sum+=count*100;
+    if($(urgency).is(':checked')){
+       sum+=count*5;
+    }
 
-                    switch(discount){
-                        case "1":{
-                            sum = sum;
-                        }
-                        case "2":{
-                            sum = sum * 0.9;
-                        }
-                    }
+    if($(transfer).is(':checked')){
+       sum+=count*18;
+    }
 
-                    if(visa.checked == true){
-                        sum+=count*60;
-                    }
+    var result = document.getElementById('details');
 
-                    if(transfer.checked == true){
-                        sum+=count*15;
-                    }
+    if(sum!=0 && result.innerHTML==""){
+        result.innerHTML += sum + '$';
+    }
+    else if(result.innerHTML !="" && sum!=0){
+        result.innerHTML+='';
+    }
+    else{
+        alert("Корректно заполните данные");
+    }
 
-                    if(urgency.checked == true){
-                        sum+=count*10;
-                    }*/
-
-                    document.getElementById('details').innerHTML += sum;
-                    
-                
-
-            }
+}

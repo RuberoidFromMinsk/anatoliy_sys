@@ -11,7 +11,7 @@
         <link href="css/materialize.min.css" rel="stylesheet">
         <link href="css/fontawesome.min.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
-        <link href="js/calc.js" type="text/javascript">
+        <script src="js/calc.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
@@ -43,49 +43,6 @@
             
 
         </style>
-        <script>
-            function calculate(){
-                sum = 0;
-                count = document.getElementById("persons").value;
-            
-                visa = document.getElementById("visa");
-                urgency = document.getElementById("urgency");
-                transfer = document.getElementById("transfer");
-
-                sum+=count*100;
-                
-                discountTrueOrFalse = document.getElementById("discount").options.selectedIndex;
-
-                if(discountTrueOrFalse==2){
-                    sum = sum * 0.9;
-                }
-
-                if($(visa).is(':checked')){
-                   sum+=count*60;
-                }
-
-                if($(urgency).is(':checked')){
-                   sum+=count*5;
-                }
-
-                if($(transfer).is(':checked')){
-                   sum+=count*18;
-                }
-
-                var result = document.getElementById('details');
-
-                if(sum!=0 && result.innerHTML==""){
-                    result.innerHTML += sum + '$';
-                }
-                else if(result.innerHTML !="" && sum!=0){
-                    result.innerHTML+='';
-                }
-                else{
-                    alert("Корректно заполните данные");
-                }
-            
-            }
-        </script>
     </head>
     <body>
         <div class="navbar-fixed">
@@ -127,7 +84,8 @@
                             <select class="browser-default" id="discount">
                                 <option value="" disabled selected>Empty</option>
                                 <option value="1">Без скидок</option> 
-                                <option value="2">Дайте скидку!!</option> 
+                                <option value="2">Скидка первым 3-м</option>
+                                <option value="3">Постоянный клиент</option> 
                             </select>
                         </div>
                         <div class="col xl2 s12 offset-xl3">
@@ -144,6 +102,18 @@
                                 <input type="checkbox" id="transfer" class="filled-in" />
                                 <span>Трансфер</span>
                             </label>    
+                        </div>
+                        <div class="lol">
+                            <p class="formText">Страна</p>
+                            <select class="browser-default" id="place">
+                                <option value="" disabled selected>Empty</option>
+                                <option value="1">Венгрия</option> 
+                                <option value="2">Германия</option> 
+                                <option value="3">Польша</option>
+                                <option value="4">США</option> 
+                                <option value="5">Канада</option>
+                                <option value="6">Беларусь</option>  
+                            </select>
                         </div>
                     </div>
                 </form>
