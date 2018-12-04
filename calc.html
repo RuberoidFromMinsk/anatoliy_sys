@@ -19,28 +19,48 @@
             body{
                 background-color: #e0e0e0;
             }
+            h4{
+                letter-spacing: 2px;
+                text-align:center;
+            }
             #calc{
                 width: 100%;
                 height: 55%;
             }
             .formText{
                 text-align: center;
-                font-size: 24px;
+                font-size: 40px;
             }
             #output{
                 font-size: 30px;
                 color:black;
             }
             .detailsStyles{
-                margin: 0 0 0 50%;
+                margin-left: 46%;
                 font-size: 50px;
                 font-weight: bold;
                 color: black;
             }
+            @media screen and (min-width: 1000px){
+               .detailsStyles{
+                margin-left: 46%;
+              }
+            }
+            @media screen and (max-width: 999px){
+                .detailsStyles{
+                margin-left: 25%;
+              }
+            }
             .width{
                 margin: 0 10% 0 10%;
             }
+            .cent{
+                text-align: left;
+            }
             
+            .bottom{
+                margin-bottom: 15%;
+            }
 
         </style>
     </head>
@@ -52,11 +72,11 @@
                 <a href="main.html" class="brand-logo">MusHunter</a>
                 <a class="sidenav-trigger" data-target="mobile-nav" href="#"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Festivals</a></li>
-                    <li><a href="#">Countries</a></li>
+                    <li><a href="main.html">Festivals</a></li>
+                    <li><a href="main.html">Countries</a></li>
                     <li><a href="calc.html" >Calc</a></li>
-                    <li><a href="#!" >About us</a></li>
-                    <li><a href="#!" >Contact</a></li>
+                    <li><a href="main.html" >About us</a></li>
+                    <li><a href="main.html" >Contact</a></li>
                 </ul>               
               </div>
             </div>
@@ -70,16 +90,18 @@
             <li><a href="#!" >Contact</a></li>
         </ul>
         <!--Navbar -->
-       
-        <div class="grey lighten-2" id="calc">
+
+        <h4>Calculator</h4>
+
+        <div class="grey lighten-2 bottom" id="calc">
             <div class="width">
                 <form>
                     <div class="row">
-                        <div class="col xl2 s12">
+                        <div class="col xl5 s12">
                             <p class="formText">Количество</p>
                             <input type="text" id="persons" placeholder="Empty"/> 
                         </div>
-                        <div class="col xl2 s12 offset-xl3">
+                        <div class="col xl5 s12 offset-xl2">
                             <p class="formText">Скидки</p>
                             <select class="browser-default" id="discount">
                                 <option value="" disabled selected>Empty</option>
@@ -88,22 +110,38 @@
                                 <option value="3">Постоянный клиент</option> 
                             </select>
                         </div>
-                        <div class="col xl2 s12 offset-xl3">
+                    </div>
+                    <div class="row">
+                        <div class="col xl5 s12">
                             <p class="formText">Прочее</p>
                             <label>
-                                <input type="checkbox" id="visa" class="filled-in" />
-                                <span>Требуется виза</span>
+                                <div class="row cent">
+                                    <div class="col xl12 s12">
+                                        <input type="checkbox" id="visa" class="filled-in" />
+                                        <span>Требуется виза</span>
+                                    </div>
+                                </div>
+
                             </label>
                             <label>
-                                <input type="checkbox" id="urgency" class="filled-in" />
-                                <span>Срочность</span>
+                                <div class="row cent">
+                                    <div class="col xl12 s12">
+                                        <input type="checkbox" id="urgency" class="filled-in" />
+                                        <span>Срочность</span>
+                                    </div>
+                                </div>
+                                
                             </label>
                             <label>
-                                <input type="checkbox" id="transfer" class="filled-in" />
-                                <span>Трансфер</span>
+                                <div class="row cent">
+                                    <div class="col xl12 s12">
+                                        <input type="checkbox" id="transfer" class="filled-in" />
+                                        <span>Трансфер</span>
+                                    </div>
+                                </div>
                             </label>    
                         </div>
-                        <div class="lol">
+                        <div class="col xl5 s12 offset-xl2">
                             <p class="formText">Страна</p>
                             <select class="browser-default" id="place">
                                 <option value="" disabled selected>Empty</option>
@@ -120,22 +158,16 @@
             </div>
         </div>
 
+
         <section class="section grey lighten-2">
             <div class="row">
-                <div class="col xl2 s6 offset-xl5 offset-s4">
-                    <a class="waves-effect waves-light grey darken-1 btn-large but" onclick="calculate();">Расчитать</a>
+                <div class="col xl12 s12 center">
+                    <a class="waves-effect waves-light grey darken-1 btn-large but" onclick="calculate();">Расcчитать</a>
                 </div>
             </div>
+            <span id="details" class="detailsStyles"></span>
         </section>
-        
-        <section class="section grey lighten-2">
-            <div class="row">
-                <div class="col xl2 s6 offset-xl4 offset-s2">
-                    <span id="details" class="detailsStyles"></span>
-                </div>
-            </div>
-        </section>
-        
+
         <footer class="section grey darken-4 white-text center">
             <div class="container">
                 <div class="row">
